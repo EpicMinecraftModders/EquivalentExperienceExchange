@@ -7,7 +7,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class BlockExperienceOre extends Block {
 	
-	public final static String name = ModEEE.MODID + "_ExperienceOre";
+	public final static String name = "experienceOre";
 	
 	public BlockExperienceOre() {
 		super(Material.rock);
