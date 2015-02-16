@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "eee:items/experienceShard"
+        "layer0": "eee:items/eeeExperienceOrb"
     },
     "display": {
         "thirdperson": {

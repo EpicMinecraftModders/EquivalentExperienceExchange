@@ -9,20 +9,11 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ItemExperienceShard extends Item {
 
-	public final static String name = "experienceShard";
+	public final static String name = "eeeExperienceShard";
 	
 	public ItemExperienceShard() {
-		this.setUnlocalizedName(this.name);
 		this.setCreativeTab(ModEEE.eeeCreativeTab);
+		this.setUnlocalizedName(this.name);
 		GameRegistry.registerItem(this, name);
 	}
-
-	@Override
-	public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn,
-			EntityPlayer playerIn) {
-		System.out.println("ItemExperienceShard.onItemRightClick got called...");
-		return null;
-	}
-	
-	
 }

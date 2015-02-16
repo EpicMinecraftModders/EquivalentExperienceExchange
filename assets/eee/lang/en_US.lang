@@ -1,2 +1,5 @@
-tile.experienceOre.name=Experience Infused Ore
-item.experienceShard.name=Raw Shard of Experience
+itemGroup.eee=EEE
+tile.eeeExperienceOre.name=Experience Infused Ore
+item.eeeExperienceShard.name=Raw Shard of Experience
+item.eeeExperienceOrb.name=Experience Orb
+item.eeeExperienceDiamond.name=Experience Infused Diamond

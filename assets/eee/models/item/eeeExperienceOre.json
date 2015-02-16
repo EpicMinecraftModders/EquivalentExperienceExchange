@@ -1,5 +1,5 @@
 {
-    "parent": "eee:block/experienceOre",
+    "parent": "eee:block/eeeExperienceOre",
     "display": {
         "thirdperson": {
             "rotation": [ 10, -45, 170 ],

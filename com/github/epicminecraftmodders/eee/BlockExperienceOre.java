@@ -18,7 +18,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class BlockExperienceOre extends Block {
 	
-	public final static String name = "experienceOre";
+	public final static String name = "eeeExperienceOre";
 	
 	public BlockExperienceOre() {
 		super(Material.rock);
@@ -46,6 +46,10 @@ public class BlockExperienceOre extends Block {
 
 	@Override
 	public int getExpDrop(IBlockAccess world, BlockPos pos, int fortune) {
-		return 10;
+		if (fortune == 0) {
+			return 20;
+		} else {
+			return 20 * fortune;
+		}
 	}
 }
