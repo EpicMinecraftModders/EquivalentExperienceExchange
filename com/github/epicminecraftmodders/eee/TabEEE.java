@@ -11,7 +11,7 @@ public class TabEEE extends CreativeTabs {
 
 	@Override
 	public Item getTabIconItem() {
-		return ModEEE.experienceShard;
+		return ModEEE.experienceDiamond;
 	}
 
 }

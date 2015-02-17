@@ -1,5 +1,10 @@
 package com.github.epicminecraftmodders.eee;
 
+import com.github.epicminecraftmodders.eee.blocks.BlockExperienceOre;
+import com.github.epicminecraftmodders.eee.items.ItemExperienceDiamond;
+import com.github.epicminecraftmodders.eee.items.ItemExperienceOrb;
+import com.github.epicminecraftmodders.eee.items.ItemExperienceShard;
+
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.RenderItem;
@@ -33,7 +38,6 @@ public class ModEEE {
 	
 	@EventHandler
 	public void preinit(FMLPreInitializationEvent event) {
-		
 		// Set the creative tab
 		eeeCreativeTab = new TabEEE(CreativeTabs.getNextID(), "eee");
 		
@@ -48,52 +52,7 @@ public class ModEEE {
 	
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-		
-		// Register the recipes
-		GameRegistry.addRecipe(new ItemStack(experienceDiamond, 1, 0),
-				new Object[]{ "AAA", "ABA", "AAA",
-					'A', experienceShard,
-					'B', Items.diamond});
-		GameRegistry.addRecipe(new ItemStack(experienceOrb, 1, 1000),
-				new Object[]{ "ABC", "ADC", "ABC",
-					'A', Items.redstone,
-					'B', experienceShard,
-					'C', Items.glowstone_dust,
-					'D', experienceDiamond});
-		GameRegistry.addRecipe(new ItemStack(experienceOrb, 1, 1000),
-				new Object[]{ "AAA", "BDB", "CCC",
-					'A', Items.redstone,
-					'B', experienceShard,
-					'C', Items.glowstone_dust,
-					'D', experienceDiamond});
-		GameRegistry.addRecipe(new ItemStack(experienceOrb, 1, 0),
-				new Object[]{ "AAA", "ABA", "AAA",
-					'A', experienceShard,
-					'B', new ItemStack(experienceOrb, 1, OreDictionary.WILDCARD_VALUE)});
-		
-		if (event.getSide().equals(Side.CLIENT)) {
-			
-			// Store this in a variable so we don't have such huge lines.
-			RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
-			
-			// Experience Ore Item Renderer
-			renderItem.getItemModelMesher().register(Item.getItemFromBlock(experienceOre), 0,
-					new ModelResourceLocation(this.MODID + ":" + BlockExperienceOre.name, "inventory"));
-			
-			// Experience Shard Item Renderer
-			renderItem.getItemModelMesher().register(experienceShard, 0,
-					new ModelResourceLocation(this.MODID + ":" + ItemExperienceShard.name, "inventory"));
-			
-			// Experience Diamond Renderer
-			renderItem.getItemModelMesher().register(experienceDiamond, 0,
-					new ModelResourceLocation(this.MODID + ":" + ItemExperienceDiamond.name, "inventory"));
-			
-			// Experience Orb Item Renderer
-			for (int i = 0; i < 1001; i++) {
-				renderItem.getItemModelMesher().register(experienceOrb, i,
-						new ModelResourceLocation(this.MODID + ":" + ItemExperienceOrb.name, "inventory"));
-			}
-		}
-		
+		// The init is handled elsewhere
+		InitEEE.doInit(event);
 	}
 }

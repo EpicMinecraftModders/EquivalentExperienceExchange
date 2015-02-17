@@ -1,5 +1,9 @@
-package com.github.epicminecraftmodders.eee;
+package com.github.epicminecraftmodders.eee.items;
 
+import com.github.epicminecraftmodders.eee.ModEEE;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -15,5 +19,11 @@ public class ItemExperienceShard extends Item {
 		this.setCreativeTab(ModEEE.eeeCreativeTab);
 		this.setUnlocalizedName(this.name);
 		GameRegistry.registerItem(this, name);
+	}
+	
+	public static void initClient() {
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(
+				ModEEE.experienceShard, 0,
+					new ModelResourceLocation(ModEEE.MODID + ":" + name, "inventory"));
 	}
 }
