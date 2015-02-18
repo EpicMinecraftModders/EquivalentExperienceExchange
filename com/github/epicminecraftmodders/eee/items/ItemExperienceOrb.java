@@ -6,6 +6,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -57,10 +58,13 @@ public class ItemExperienceOrb extends Item {
 					'D', ModEEE.experienceDiamond});
 		
 		// Recipies for alchemy
-		GameRegistry.addRecipe(new ItemStack(Items.gold_nugget, 5),
-				new Object[]{ "ABB", "BBB", "BBB",
-					'A', ModEEE.experienceOrb,
-					'B', Items.iron_ingot});
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.gold_ingot, 4),
+				new ItemStack(ModEEE.experienceOrb, 1, OreDictionary.WILDCARD_VALUE),
+				Blocks.iron_block);
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.diamond, 1),
+				new ItemStack(ModEEE.experienceOrb, 1, OreDictionary.WILDCARD_VALUE),
+				Blocks.gold_block,
+				Blocks.gold_block);
 	}
 	
 	public static void initClient() {
@@ -96,6 +100,11 @@ public class ItemExperienceOrb extends Item {
 	public boolean showDurabilityBar(ItemStack stack) {
 		return true;
 	}
+	
+	@Override
+	public boolean hasContainerItem(ItemStack stack) {
+		return true;
+	}
 
 	@Override
 	public ItemStack getContainerItem(ItemStack itemStack) {
@@ -107,6 +116,4 @@ public class ItemExperienceOrb extends Item {
 		}
 		return temp;
 	}
-	
-	
 }
