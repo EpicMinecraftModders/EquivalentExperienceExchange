@@ -1,5 +1,6 @@
 package com.github.epicminecraftmodders.eee;
 
+import com.github.epicminecraftmodders.eee.blocks.BlockEEEOres;
 import com.github.epicminecraftmodders.eee.blocks.BlockExperienceOre;
 import com.github.epicminecraftmodders.eee.items.ItemExperienceDiamond;
 import com.github.epicminecraftmodders.eee.items.ItemExperienceOrb;
@@ -31,6 +32,7 @@ public class ModEEE {
 	public static CreativeTabs eeeCreativeTab;
 	
 	public static Block experienceOre;
+	public static Block eeeOres;
 	
 	public static Item experienceShard;
 	public static Item experienceOrb;
@@ -42,7 +44,8 @@ public class ModEEE {
 		eeeCreativeTab = new TabEEE(CreativeTabs.getNextID(), "eee");
 		
 		// Add the blocks
-		experienceOre = new BlockExperienceOre();
+		//experienceOre = new BlockExperienceOre();
+		eeeOres = new BlockEEEOres();
 		
 		// Add the Items
 		experienceShard = new ItemExperienceShard();
